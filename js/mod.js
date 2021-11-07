@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	name: "The Smell Tree",
+	id: "noxmod",
+	author: "TelosNox",
+	pointsName: "smell",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -19,8 +19,8 @@ let VERSION = {
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		- Initial version.<br>
+		- Really!.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -43,6 +43,10 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11)) gain = gain.times(2)
+	if (hasUpgrade('p', 12)) gain = gain.times(upgradeEffect('p', 12))
+	if (hasUpgrade('f', 11)) gain = gain.times(2)
+	if (hasUpgrade('f', 12)) gain = gain.times(upgradeEffect('f', 12))
 	return gain
 }
 
