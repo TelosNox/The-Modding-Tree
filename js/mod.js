@@ -1,13 +1,13 @@
 let modInfo = {
-	name: "The Smell Tree",
-	id: "noxmod",
+	name: "The exp tree",
+	id: "noxmod-exptree",
 	author: "TelosNox",
-	pointsName: "smell",
-	modFiles: ["layers.js", "tree.js"],
+	pointsName: "experience",
+	modFiles: ["layers/actions.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
@@ -34,7 +34,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	return false
 }
 
 // Calculate points/sec!
@@ -43,10 +43,6 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-	if (hasUpgrade('p', 11)) gain = gain.times(2)
-	if (hasUpgrade('p', 12)) gain = gain.times(upgradeEffect('p', 12))
-	if (hasUpgrade('f', 11)) gain = gain.times(2)
-	if (hasUpgrade('f', 12)) gain = gain.times(upgradeEffect('f', 12))
 	return gain
 }
 
