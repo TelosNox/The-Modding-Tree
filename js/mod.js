@@ -51,7 +51,7 @@ function addedPlayerData() { return {
 }}
 
 // Display extra things at the top of the page
-var displayThings = [
+var displayThings = [ function() {return "Coins: "+ player.co.points}
 ]
 
 // Determines when the game "ends"
