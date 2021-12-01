@@ -3,7 +3,7 @@ let modInfo = {
 	id: "noxmod-exptree",
 	author: "TelosNox",
 	pointsName: "experience",
-	modFiles: ["layers/actions.js", "tree.js"],
+	modFiles: ["layers/actions.js", "layers/coins.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
